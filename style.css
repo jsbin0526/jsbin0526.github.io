@@ -39,6 +39,10 @@
     margin-top: -50%;
 }
 
+.menu > li {
+    display: inline;
+}
+
 .vl {
     position: relative;
     top: 50%;
