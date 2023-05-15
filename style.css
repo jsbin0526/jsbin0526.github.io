@@ -43,6 +43,10 @@
     display: inline;
 }
 
+.menu-toggle {
+    display: none;
+}
+
 .vl {
     position: relative;
     top: 50%;
@@ -62,18 +66,27 @@ ul {
 
 @media (max-width: 700px) {
     .navigation {
-        height: 20%;
+        height: auto;
         text-align: center;
     }
 
     .menu {
-        float:right;
+        width: calc(100% - 40px);
+        height: auto;
+        display: none;
+        float: none;
     }
 
     .home, .item {
         display: block;
         top: 0px;
         margin-top: 0px;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        display: block;
+        float: right;
     }
 
     #app {
