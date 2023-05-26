@@ -15,12 +15,16 @@ export default class TicTacToe {
         this.boxLength = this.canvasSize / 3;
         this.ctx.strokeStyle = "black";
         this.ctx.lineWidth = 1;
-        $(window).bind('resize', () => { 
-            console.log('resize');
-            this.canvasSize = Math.max(this.canvas.parent().width(), this.canvas.parent().height()) / 2;
-            this.boxLength = this.canvasSize / 3;
-            this.canvas.attr("width", this.canvasSize).attr("height", this.canvasSize);
-            this.#draw();
+        let sec = 300;
+        let timer = null;
+        $(window).bind('resize', () => {
+            clearTimeout(timer);
+            setTimeout(() => {
+                this.canvasSize = Math.max(this.canvas.parent().width(), this.canvas.parent().height()) / 2;
+                this.boxLength = this.canvasSize / 3;
+                this.canvas.attr("width", this.canvasSize).attr("height", this.canvasSize);
+                this.#draw();
+            }, sec);
         });
         this.#init();
     }
