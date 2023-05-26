@@ -96,4 +96,8 @@ ul {
     .vl {
         display: none;
     }
+
+    .restart-button {
+        width: 400px;
+    }
 }

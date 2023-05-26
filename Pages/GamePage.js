@@ -1,9 +1,17 @@
 export default class GamePage {
     render () {
         return `
-            <h1>This Page Contains Various Web Games!</h1>
-            <canvas id="Tic-Tac-Toe" width="1000" height="1000"></canvas>
-            <script src="TicTacToe.js"></script>
+            <canvas id="Tic-Tac-Toe"></canvas>
+            <script src="TicTacToe.js" type="module"></script>
+            <script type="module">
+                import TicTacToe from "../TicTacToe.js";
+                $(document).ready(() => {
+                    let game = new TicTacToe();
+                })
+            </script>
+            <br/>
+            <button class="restart-button">Restart</button>
+            <button class="undo-button">Undo</button>
         `;
     }
 }

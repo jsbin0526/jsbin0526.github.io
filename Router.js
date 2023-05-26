@@ -16,12 +16,12 @@ export default class Router {
     route(paths) {
         this.currentPagePath = window.location.hash
         if (this.currentPagePath in paths) {
-            this.page = paths[this.currentPagePath].render()
+            delete this.page;
+            this.page = paths[this.currentPagePath].render();
         }
         else {
-            this.page = (new InstructionPage).render()
+            this.page = (new InstructionPage).render();
         }
-        console.log(this.page);
         $("#app").html(this.page);
     }
 }
