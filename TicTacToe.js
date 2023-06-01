@@ -22,7 +22,7 @@ export default class TicTacToe {
         let timer = null;
         $(window).bind('resize', () => {
             clearTimeout(timer);
-            setTimeout(() => {
+            timer = setTimeout(() => {
                 this.canvasSize = Math.max(this.canvas.parent().width(), this.canvas.parent().height()) / 2.5;
                 this.boxLength = this.canvasSize / 3;
                 this.canvas.attr("width", this.canvasSize).attr("height", this.canvasSize);

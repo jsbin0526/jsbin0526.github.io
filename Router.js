@@ -5,11 +5,11 @@ export default class Router {
         this.app = $("#app")
 
         window.onhashchange = () => {
-            this.route(paths)
+            this.route(paths);
         }
 
         window.onload = () => {
-            this.route(paths)
+            this.route(paths);
         }
     }
 

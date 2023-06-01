@@ -1,6 +1,6 @@
 export default class GamePage {
     render () {
-        return `
+        return /*html*/`
             <h1>2-Player Tic-Tac-Toe Game</h1>
             <br/>
             <canvas id="Tic-Tac-Toe"></canvas>
@@ -12,7 +12,7 @@ export default class GamePage {
                 })
             </script>
             <br/><br/>
-            <h1 class="game-end-display" style=display:none;>Error!<h1/>
+            <h1 class="game-end-display" style=display:none;>Error!<h1>
             <button class="restart-button">Restart</button>
             <button class="undo-button">Undo</button>
         `;
