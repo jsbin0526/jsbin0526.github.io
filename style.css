@@ -64,6 +64,11 @@ ul {
     list-style: none;
 }
 
+.restart-button, .undo-button {
+    width: 40%;
+    height: 50px;
+}
+
 @media (max-width: 700px) {
     .navigation {
         height: auto;
@@ -95,9 +100,5 @@ ul {
 
     .vl {
         display: none;
-    }
-
-    .restart-button {
-        width: 400px;
     }
 }

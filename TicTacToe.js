@@ -1,7 +1,7 @@
 export default class TicTacToe {
     constructor() {
         this.canvas = $('#Tic-Tac-Toe');
-        this.canvasSize = Math.max(this.canvas.parent().width(), this.canvas.parent().height()) / 2;
+        this.canvasSize = Math.max(this.canvas.parent().width(), this.canvas.parent().height()) / 2.5;
         this.canvas.attr("width", this.canvasSize).attr("height", this.canvasSize);
         this.restartButton = $('.restart-button');
         this.restartButton.on('click', () => {
@@ -15,14 +15,20 @@ export default class TicTacToe {
         this.boxLength = this.canvasSize / 3;
         this.ctx.strokeStyle = "black";
         this.ctx.lineWidth = 1;
+        this.ctx.font = this.canvasSize/3 + "px san-serif";
+        this.ctx.textAlign = 'center';
+        this.ctx.textBaseline = 'middle';
         let sec = 300;
         let timer = null;
         $(window).bind('resize', () => {
             clearTimeout(timer);
             setTimeout(() => {
-                this.canvasSize = Math.max(this.canvas.parent().width(), this.canvas.parent().height()) / 2;
+                this.canvasSize = Math.max(this.canvas.parent().width(), this.canvas.parent().height()) / 2.5;
                 this.boxLength = this.canvasSize / 3;
                 this.canvas.attr("width", this.canvasSize).attr("height", this.canvasSize);
+                this.ctx.font = this.canvasSize/3 + "px san-serif";
+                this.ctx.textAlign = 'center';
+                this.ctx.textBaseline = 'middle';
                 this.#draw();
             }, sec);
         });
@@ -30,6 +36,8 @@ export default class TicTacToe {
     }
 
     #init() {
+        let text = $(".game-end-display");
+        text.css("display", "none");
         this.isQuit = false;
         this.undoButton.on('click', this.#undo.bind(this));
         this.box = new Array(3).fill('').map(() => new Array(3).fill(''));
@@ -49,7 +57,7 @@ export default class TicTacToe {
                 this.#win();
                 this.#quit();
             }
-            if (this.#isBoardFull()) {
+            else if (this.#isBoardFull()) {
                 this.#tie();
                 this.#quit();
             }
@@ -85,7 +93,12 @@ export default class TicTacToe {
         if (x == y || 2-x == y) {
             ret = true;
             for (let i = 0; i < 3; i++)
-                if (this.box[i][i] != this.currentUser && this.box[2-i][i] != this.currentUser)
+                if (this.box[i][i] != this.currentUser)
+                    ret = false;
+            if (ret)
+                return true;
+            for (let i = 0; i < 3; i++)
+                if (this.box[2-i][i] != this.currentUser)
                     ret = false;
             if (ret)
                 return true;
@@ -95,7 +108,6 @@ export default class TicTacToe {
     #isBoardFull() {
         for (let i = 0; i < 3; i++)
             for (let j = 0; j < 3; j++) {
-                console.log(this.box[i][j]);
                 if (this.box[i][j] == '')
                     return false;
             }
@@ -121,9 +133,6 @@ export default class TicTacToe {
     }
 
     #drawStone() {
-        this.ctx.font = "10vw san-serif";
-        this.ctx.textAlign = 'center';
-        this.ctx.textBaseline = 'middle';
         for (let i = 0; i < 3; i++) {
             for (let j = 0; j < 3; j++) {
                 this.ctx.fillText(this.box[i][j], j * this.boxLength + this.boxLength / 2, i * this.boxLength + this.boxLength / 2);
@@ -145,15 +154,15 @@ export default class TicTacToe {
     }
 
     #win() {
-        this.ctx.font = "10vw san-serif";
-        this.ctx.fillText("Player " + this.currentUser + " wins!", 0, 0)
-        console.log("Player " + this.currentUser + " wins!");
+        let text = $(".game-end-display");
+        text.text("Player " + this.currentUser + " wins!");
+        text.css("display", "block");
     }
 
     #tie() {
-        this.ctx.font = "10vw san-serif";
-        this.ctx.fillText("draw", 0, 0)
-        console.log("Draw!");
+        let text = $(".game-end-display");
+        text.text("Draw!");
+        text.css("display", "block");
     }
 
     #undo() {
