@@ -10,6 +10,6 @@ const menu = $(".menu");
 let menu_toggle = true;
 button_icon.on('click', () => {
     menu_toggle = !menu_toggle;
-    button_icon.attr('src', menu_toggle ? "hamburger_button.svg" : "close_button.svg");
+    button_icon.attr('src', menu_toggle ? "/Images/hamburger_button.svg" : "/Images/close_button.svg");
     menu.toggleClass("menu-show");
 });

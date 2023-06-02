@@ -2,7 +2,7 @@ export default class InstructionPage {
     render() {
         return /*html*/`
         <div class="instruction">
-            <img src="../profile.png" class="profile-image">
+            <img src="../Images/profile.png" class="profile-image">
             <div>
                 <div>
                     <h2>Hi! My name is Seonbin Ji!</h2>
@@ -22,8 +22,8 @@ export default class InstructionPage {
                 <div>
                     <h2>Links</h2>
                     <ul style="list-style:none;padding-left:0px">
-                        <li style="display:inline;"><a href="https://github.com/jsbin0526"><img src="../github-mark.svg"></a></li>
-                        <li style="display:inline;"><a href="https://www.acmicpc.net/user/jsbin0526"><img width="98px" src="../baekjoon-mark.svg"></a></li>
+                        <li style="display:inline;"><a href="https://github.com/jsbin0526"><img src="../Images/github-mark.svg"></a></li>
+                        <li style="display:inline;"><a href="https://www.acmicpc.net/user/jsbin0526"><img width="98px" src="../Images/baekjoon-mark.svg"></a></li>
                     </ul>
                 </div>
             </div>
