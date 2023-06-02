@@ -9,11 +9,11 @@ export default class Paginator {
             $(".page-item-"+this.year).removeClass("active");
             $(".page-item-"+year).addClass("active");
             if (year === "all") {
-                for (let i = 2020; i < 2023; i++) {
+                for (let i = 2019; i < 2023; i++) {
                     $(".product-" + i).removeClass("hide");
                 }
             } else if (this.year === "all") {
-                for (let i = 2020; i < 2023; i++) {
+                for (let i = 2019; i < 2023; i++) {
                     if (i != year) {
                         $(".product-" + i).addClass("hide");
                     }
