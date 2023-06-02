@@ -102,6 +102,29 @@ ul.menu {
     height:auto;
 }
 
+.pagination {
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+}
+
+.page-item {
+    display: inline;
+}
+
+.page-item .page-link {
+    border: 1px solid lightgray;
+    margin: 10px;
+    color: #4B89DC;
+}
+
+.page-item.active .page-link {
+    color: white;
+}
+
+.active {
+    background-color: #4B89DC;
+}
+
 @media (max-width: 700px) {
     .navigation {
         height: 90px;
