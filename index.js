@@ -9,8 +9,7 @@ const button_icon = $(".menu-toggle > img");
 const menu = $(".menu");
 let menu_toggle = true;
 button_icon.on('click', () => {
-    console.log(menu_toggle);
     menu_toggle = !menu_toggle;
     button_icon.attr('src', menu_toggle ? "hamburger_button.svg" : "close_button.svg");
-    menu.css('display', menu_toggle ? "none" : "block");
+    menu.toggleClass("menu-show");
 });
