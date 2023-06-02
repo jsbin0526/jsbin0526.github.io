@@ -113,7 +113,6 @@ ul.menu {
 
 .page-item .page-link {
     border: 1px solid lightgray;
-    margin: 10px;
     color: #4B89DC;
 }
 
@@ -123,6 +122,10 @@ ul.menu {
 
 .active {
     background-color: #4B89DC;
+}
+
+.hide {
+    display: none;
 }
 
 @media (max-width: 700px) {

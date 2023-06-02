@@ -4,7 +4,6 @@ export default class GamePage {
             <h1>2-Player Tic-Tac-Toe Game</h1>
             <br/>
             <canvas id="Tic-Tac-Toe"></canvas>
-            <script src="TicTacToe.js" type="module"></script>
             <script type="module">
                 import TicTacToe from "../TicTacToe.js";
                 $(document).ready(() => {
