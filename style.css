@@ -130,6 +130,11 @@ ul.menu {
     display: none;
 }
 
+div[class^="product"] a {
+    text-decoration: underline;
+    color: #4B89DC;
+}
+
 @media (max-width: 700px) {
     .navigation {
         height: 90px;

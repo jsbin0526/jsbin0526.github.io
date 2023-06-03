@@ -2,7 +2,7 @@ export default class InstructionPage {
     render() {
         return /*html*/`
         <div class="instruction">
-            <img src="../Images/profile.png" class="profile-image">
+            <img src="../Images/profile.jpg" class="profile-image">
             <div>
                 <div>
                     <h2>Hi! My name is Seonbin Ji!</h2>
